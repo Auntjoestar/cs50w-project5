@@ -1,0 +1,138 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+            crossorigin="anonymous" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-avatar@latest/dist/avatar.min.css" rel="stylesheet">
+        
+        <!-- Bootstrap 4 -->
+        <link rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+            integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+            crossorigin="anonymous" />
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+            integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+            crossorigin="anonymous"></script>
+        <script
+            src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+            integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+            crossorigin="anonymous"></script>
+
+        <!-- Font Awesome -->
+        <link
+            href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+            rel="stylesheet"
+            integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+            crossorigin="anonymous" />
+
+        <!-- Moment.js -->
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.23.0/moment.min.js"
+            integrity="sha256-VBLiveTKyUZMEzJd6z2mhfxIqz3ZATCuVMawPZGzIfA="
+            crossorigin="anonymous"></script>
+
+        <!-- Tempus Dominus Bootstrap 4 -->
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.1.2/css/tempusdominus-bootstrap-4.min.css"
+            integrity="sha256-XPTBwC3SBoWHSmKasAk01c08M6sIA5gF5+sRxqak2Qs="
+            crossorigin="anonymous" />
+        <script rel="stylesheet"
+            src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.1.2/js/tempusdominus-bootstrap-4.min.js"
+            integrity="sha256-z0oKYg6xiLq3yJGsp/LsY9XykbweQlHl42jHv2XTBz4="
+            crossorigin="anonymous"></script>
+
+        <link rel="stylesheet" type="text/css"
+            href="{% static 'dndlite/styles/styles.css' %}" />
+        <title>
+            {% block title %}
+            DnD Lite
+            {% endblock %}
+        </title>
+        {% block script %}
+
+        {% endblock %}
+    </head>
+    <body>
+        <header>
+            <nav
+                class="navbar bg-dark border-bottom border-body navbar navbar-expand-lg bg-dark bg-body-tertiary"
+                data-bs-theme="dark">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">
+                        <svg id="icon"
+                            xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+                            xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+                            xmlns="http://www.w3.org/2000/svg"
+                            xmlns:svg="http://www.w3.org/2000/svg" version="1.1"
+                            viewBox="0 0 786.61316 1093.28285" x="0px" y="0px">
+                            <g transform="translate(-490.92622,-686.83692)">
+                                <path style
+                                    d="m 814.88389,1536.2642 c -23.76,-13.8368 -77.76,-45.1962 -120,-69.6875 -101.10892,-58.6245 -98.37431,-56.9975 -96.42848,-57.3722 2.01979,-0.389 15.54048,1.8626 124.16181,20.6767 45.76,7.9261 94.48,16.3119 108.26667,18.6352 13.78667,2.3233 26.14667,4.6855 27.46667,5.2495 l 2.4,1.0253 v 45.1953 c 0,43.0722 -0.60863,61.566 -2.02319,61.4764 -0.35391,-0.022 -20.08348,-11.3618 -43.84348,-25.1987 z m 97.5328,22.9974 c -1.46752,-2.3745 -2.40327,-24.8525 -2.61538,-62.8247 -0.11962,-21.4133 -0.16497,-39.9683 -0.1008,-41.2332 0.099,-1.9517 0.96444,-2.4069 5.7167,-3.0061 21.39157,-2.6977 97.31099,-15.6094 178.93339,-30.4313 55.6747,-10.1101 78.8806,-14.058 80.148,-13.6356 1.1846,0.3949 -8.4398,6.1576 -42.8147,25.6354 -36.3483,20.5961 -191.64113,110.6252 -206.25579,119.5744 -6.374,3.903 -11.74567,7.0964 -11.93704,7.0964 -0.19138,0 -0.67485,-0.5289 -1.07439,-1.1753 z m -80.55502,-158.1851 c -0.66675,-0.6407 -57.23865,-10.7184 -144.44445,-25.7312 -42.82666,-7.3728 -91.54056,-15.8127 -108.2531,-18.7553 -38.07003,-6.7031 -63.99046,-10.5482 -71.12632,-10.5509 -9.39883,0 -9.30058,0.5126 -3.0073,-15.802 21.70824,-56.2763 105.12929,-265.3402 113.62983,-284.7709 3.66631,-8.3805 7.19647,-15.0703 7.8448,-14.8662 2.03738,0.6415 13.23245,20.0011 76.76758,132.7541 13.30085,23.6044 27.56425,48.5152 31.69642,55.3573 4.13217,6.8421 9.10947,15.6093 11.06068,19.4828 1.9512,3.8735 16.39254,29.3627 32.09186,56.6427 51.86017,90.1151 60.22889,104.8077 60.22889,105.7418 0,0.9068 -5.61502,1.3376 -6.48889,0.4978 z m 101.42222,-1.1719 c 0,-0.8795 3.52719,-7.9595 7.83819,-15.7334 38.94184,-70.2223 194.04152,-340.3772 201.58532,-351.1244 l 2.1925,-3.1234 3.1036,6.8567 c 1.7071,3.7713 8.7485,21.2568 15.6474,38.8568 6.8991,17.6 19.0288,48.08 26.9548,67.7334 36.6067,90.7701 77.7817,196.1951 77.0736,197.3407 -1.7435,2.8211 -28.3475,7.9179 -141.8621,27.1781 -92.3273,15.6653 -178.75427,30.7483 -186.66664,32.5765 -5.6729,1.3107 -5.86667,1.2923 -5.86667,-0.561 z m -53.66737,-24.801 c -9.15758,-14.3751 -81.07145,-139.797 -134.09347,-233.8667 -10.41619,-18.48 -22.64382,-39.84 -27.17251,-47.4666 -4.5287,-7.6267 -9.68451,-16.7467 -11.45735,-20.2667 -1.77284,-3.52 -10.29616,-18.64 -18.94069,-33.6 -8.64454,-14.96 -17.71504,-30.8659 -20.1567,-35.3464 l -4.43936,-8.14634 25.36373,-0.89749 c 30.72643,-1.08726 415.80493,-1.25749 416.87813,-0.1843 1.0134,1.01343 0.3897,2.12195 -137.90888,245.10783 -75.2672,132.242 -80.8635,141.8667 -82.4883,141.8667 -0.54884,0 -3.0619,-3.24 -5.5846,-7.2 z m 392.99198,-153.3725 c -8.1077,-21.48 -78.0759,-199.8797 -88.9867,-226.89198 l -3.7689,-9.33114 4.4488,-3.62219 c 11.2956,-9.19666 60.9904,-40.24551 81.7674,-51.08737 l 10.1184,-5.28006 0.7086,2.52594 c 0.8741,3.11636 0.8515,183.5247 -0.032,252.6201 l -0.6472,50.6275 -3.6087,-9.5608 z m -781.44618,-30.8942 c -0.92624,-43.5865 1.06518,-232.99906 2.63986,-251.08841 0.53089,-6.09865 1.41311,-11.5363 1.96049,-12.08368 1.3695,-1.3695 8.09918,2.1694 36.45455,19.17023 28.52124,17.10025 57.6,36.04261 57.6,37.52153 0,3.16561 -85.14785,218.29683 -94.35176,238.38553 l -3.46444,7.5615 z M 672.89769,946.30359 c 1.56562,-2.85903 109.0039,-135.44605 125.97818,-155.46667 4.47659,-5.28 12.42162,-15.12 17.65563,-21.86666 5.234,-6.74667 16.24569,-20.42667 24.47042,-30.4 8.22473,-9.97334 20.93872,-25.69334 28.25331,-34.93334 7.31459,-9.24 13.88946,-16.8 14.61081,-16.8 1.55645,0 26.54558,28.97044 45.08387,52.26667 7.23613,9.09333 15.64507,19.41333 18.68651,22.93333 3.04144,3.52 17.71736,21.52 32.61313,40 14.89579,18.48 42.72265,52.8 61.83755,76.26667 54.9659,67.47993 53.6989,65.84219 51.7732,66.91985 -4.2438,2.37492 -45.2203,2.90271 -227.01394,2.92399 -185.36874,0.0218 -194.92052,-0.0691 -193.94867,-1.84384 z m -64.4138,-10.30784 c -2.34667,-1.3702 -17.70667,-10.08329 -34.13333,-19.36242 -16.42667,-9.27914 -36.27413,-20.6628 -44.10546,-25.29704 l -14.23881,-8.42588 3.57214,-2.41967 c 11.52853,-7.80912 53.49063,-31.554 208.90546,-118.21222 46.43741,-25.89317 53.53375,-29.73007 54.04334,-29.22049 0.61742,0.61743 -10.36619,14.58997 -47.51539,60.44556 -100.91387,124.56432 -117.98722,145.0919 -120.62137,145.02505 -0.90195,-0.0229 -3.55991,-1.16269 -5.90658,-2.53289 z M 1140.443,923.37026 c -6.9505,-8.36 -22.674,-27.68 -34.9411,-42.93334 -12.2671,-15.25333 -25.2155,-31.09333 -28.7742,-35.2 -3.5586,-4.10666 -11.002,-13.22666 -16.5407,-20.26666 -5.5388,-7.04 -15.8441,-19.76 -22.9008,-28.26667 -26.7702,-32.27116 -54.08369,-66.27419 -53.61341,-66.74445 0.26897,-0.26898 20.12151,10.64336 44.11671,24.24963 23.9953,13.60628 84.4277,47.66864 134.2944,75.69416 49.8667,28.02551 91.3867,51.39339 92.2667,51.92861 1.2481,0.75909 0.3487,1.65116 -4.0894,4.05592 -3.1292,1.69553 -23.2892,13.08271 -44.8,25.30483 -43.3287,24.61863 -48.4463,27.37797 -50.7771,27.37797 -0.8821,0 -7.2907,-6.84 -14.2411,-15.2 z"
+                                    fill="#000000" stroke-width="1.06667" />
+                            </g>
+                        </svg>
+                    </a>
+                    <button class="navbar-toggler" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false"
+                        aria-label="Toggle navigation"><span
+                            class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page"
+                                    href="{% url 'index' %}">Home</a>
+                            </li>
+                            {% if not user.is_authenticated %}
+                            <li class="nav-item active">
+                                <a class="nav-link"
+                                    href="{% url 'register' %}">Register</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link"
+                                    href="{% url 'login' %}">Login</a>
+                            </li>
+                            {% else %}
+                            <li class="nav-item">
+                                <a class="nav-link"
+                                    href="{% url 'logout' %}">Logout
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{% url 'profile' %}">
+                                {{ user.username }}
+                                {% if user.profile.picture %}
+                                <img src="{{ user.profile.picture.image.url }}" class="avatar avatar-48 bg-light rounded-circle text-white p-1" alt="Foto de perfil">
+                                {% endif %}
+                            </a>
+                                
+                            </li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <main>
+            {% block content %}
+
+            {% endblock %}
+        </main>
+        <footer></footer>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script>
+    </body>
+</html>

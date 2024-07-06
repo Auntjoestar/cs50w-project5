@@ -1,0 +1,29 @@
+{% extends 'dndlite/layout.html' %}
+{% load static %}
+
+
+{% block title %}
+    Login
+{% endblock %}
+
+{% block content %}
+    <div class="message">
+        {% if message %}
+            <div class="alert alert-danger alert-dismissible class">
+                {{ message }}
+                <button type="button" class="btn-close" aria-label="Close" data-bs-dismiss="alert"></button>
+            </div>
+        {% endif %}
+    </div>
+    <h1>Login</h1>
+    <form id="loginForm" action="{% url 'login' %}" method="POST">
+        <div class="userFormView">
+            {% csrf_token %}
+            <label for="username">Bienvenido, viajero, ingresa tu nombre de usuario: </label>
+            <input name="username"  type="text" id="username" class="form-control my-2">
+            <label for="password">Por favor, ingresa tu contraseña: </label>
+            <input name="password" type="password" id="password" class="form-control my-2">
+        </div>
+        <input type="submit" class="submitButton btn btn-dark" value="Login">
+    </form>
+{% endblock %}

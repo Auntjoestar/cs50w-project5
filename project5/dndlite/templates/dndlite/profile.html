@@ -1,0 +1,68 @@
+{% extends 'dndlite/layout.html' %}
+{% load static %}
+
+{% block title %}
+  Profile
+{% endblock %}
+
+{% block content %}
+  {% if user.is_authenticated %}
+    {% if messages %}
+      {% for message in messages %}
+        <div class="alert {% if message.tags %}
+            
+            alert-{{ message.tags }}
+          {% endif %}"
+          role="alert">{{ message }}</div>
+      {% endfor %}
+    {% endif %}
+
+    <div class="profileView">
+      <div class="profile">
+        <a href="#editPictureView" class="editPicture"><img src="{{ picture.image.url }}" alt="Profile Picture" class="profilePicture" /></a>
+        <div class="editPictureView">
+          <form id="change-picture-form" action="{% url 'change_picture' %}" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ pictureForm }}
+            <input type="submit" class="submitButton btn btn-dark" value="Change Picture" />
+            <input type="button" class="cancelButton btn btn-dark" value="Cancel" />
+          </form>
+        </div>
+        <div class="userInformationView">
+            <h1>{{ user.username }}</h1>
+            <h2>{{ user.first_name }} {{ user.last_name }}</h2>
+            <p>{{ user_pronoun }}</p>
+            <p><strong>Biografía:</strong> {{ profile.bio }}</p>
+            <p><strong>Fecha de nacimiento:</strong> {{ profile.birthdate}}</p>
+          <button type="text" id="editProfileButton" class="btn btn-dark">Edit Profile</button>
+        </div>
+        <div class="editProfileView">
+          <form id="edit-profile-form" action="{% url 'change_profile' %}" method="POST">
+            {% csrf_token %}
+            {{ userForm.first_name }}
+            {{ userForm.last_name }}
+            {{ profileForm }}
+            <input type="submit" class="submitButton btn btn-dark" value="Save Changes"/>
+            <input type="button" class="cancelButton btn btn-dark" value="Cancel"/>
+          </form>
+        </div>
+      </div>
+      <div class="userContent">
+        <div class="card mb-3">
+          <img src="..." class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <p class="card-text">
+              <small class="text-body-secondary">Last updated 3 mins ago</small>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+{% endblock %}
+
+{% block script %}
+  <script src="{% static 'dndlite/script/profile.js' %}"></script>
+{% endblock %}

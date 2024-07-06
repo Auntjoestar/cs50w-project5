@@ -1,0 +1,13 @@
+{% extends 'dndlite/layout.html' %}
+{% block content %}
+{% if messages %}
+    {% for message in messages %}
+        <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}" role="alert">{{ message }}</div>
+    {% endfor %}
+{% endif %}
+    {% if user.is_authenticated %}
+    <h1>Bienvenido a DnD Lite, {{ user.username }}!</h1>
+    {% else %}
+    <h1>Bienvenido a DnD Lite, viajero!</h1>
+    {% endif %}
+{% endblock %}

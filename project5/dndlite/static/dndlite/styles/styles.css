@@ -1,0 +1,64 @@
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #973131;
+  color: #f7f9f2;
+}
+
+main {
+  width: 90vw;
+  margin: 0 auto;
+}
+
+#icon {
+  width: 5vw;
+  height: 5vh;
+  margin: 0 auto;
+  display: block;
+}
+
+.navigationView {
+  margin: 1%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.navigationView .nextButton .previousButton {
+  padding: 0;
+  border: 0;
+  margin: 0;
+  width: 5vw;
+  height: 6vh;
+}
+.navigationView .nextButton .previousButton svg {
+  width: 5vw;
+  height: 5vh;
+  color: #f7f9f2;
+}
+.navigationView .nextButton {
+  align-self: flex-end;
+}
+.navigationView .previousButton {
+  align-self: flex-start;
+}
+
+.profileView {
+  display: flex;
+}
+.profileView .profile {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+}
+
+.profilePicture {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 0.3vw solid black;
+}
+
+
+
+/*# sourceMappingURL=styles.css.map */
